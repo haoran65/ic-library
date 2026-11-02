@@ -48,14 +48,8 @@
     '#clue-food':'Eight squares on each side,<br>paws cross the black and white world,<br>one step beyond the board.',
     '#clue-bed':'One star short of a thousand,<br>thirteen butterflies each take thirteen,<br>three more fall at dawn.',
     '#clue-wand':'The breath that feeds a flame,<br>a light metal inside batteries,<br>the lightest drifts through stars.',
-    '#hint-label-one':'A small hint',
-    '#hint-label-two':'A small hint',
-    '#hint-label-three':'A small hint',
-    '#hint-one':'Think of a black-and-white chessboard and the step beyond it.',
-    '#hint-two':'Subtract the stars carried away and the ones that fell from the original count.',
-    '#hint-three':'Think of three elements, then put their atomic numbers in the order of the poem.',
     '#welcome-title':'A note before you begin',
-    '#welcome-copy':'<p>This small vibe-coded project is built on the wonderful open-source <a href="https://github.com/qwdwqfwq/topconf-paper-figure-gallery" target="_blank" rel="noopener">Top-Conf Figure Gallery</a>. My thanks to everyone who contributed to the original project.</p><p>The Gallery is still a work in progress. More figures and content are on the way, and the text-to-image feature is being migrated. The figures have not yet been accurately classified by hand, so search is the best way to find what you need.</p><p>There is also a little cat here named Bappu. Its three favorite things are scattered throughout the Gallery. Help find them, and something interesting might happen :)</p>',
+    '#welcome-copy':'<p>This small vibe-coded project is built on the wonderful open-source <a href="https://github.com/qwdwqfwq/topconf-paper-figure-gallery" target="_blank" rel="noopener">Top-Conf Figure Gallery</a>. My thanks to everyone who contributed to the original project.</p><p>The Gallery is still a work in progress. More figures and content are on the way, and the text-to-image feature is being migrated. The figures have not yet been accurately classified by hand, so search is the best way to find what you need.</p><p>There is also a little cat here named Bappu. Its three favorite things are scattered throughout the Gallery. Help find them, and something interesting might happen :) Bappu gets lonely sometimes, too, and would love it if you gave it a few pets and spent some time playing together.</p>',
     '#welcome-close':'Enter Gallery <span aria-hidden="true">↗</span>',
     '.library-return span':'RESEARCH EXPRESSION / IC GALLERY'
   };
