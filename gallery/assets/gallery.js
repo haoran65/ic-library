@@ -104,6 +104,7 @@ function showLightbox(id){
   $('lb-tags').replaceChildren(patternTag(f),...(f.semantic_tags||[]).map(p=>el('span','pattern-tag',patLabel(p))));
   showKeywords(f);
   showCollectible(id);
+  const link=$('lb-paper');try{const u=new URL(f.paper);link.hidden=!['http:','https:'].includes(u.protocol);if(!link.hidden)link.href=u.href;}catch{link.hidden=true;link.removeAttribute('href');}
   $('lb-id').textContent=f.id;$('share-status').textContent='';const image=$('lb-img');image.alt=f.title+' · Fig. '+f.figure_label;image.src=f.image;image.onload=()=>setZoom(1);setZoom(1);
 }
 const itemLabels={food:['猫粮饭盆','Food bowl'],bed:['舒适猫窝','Cat bed'],wand:['逗猫棒','Teaser wand']};
@@ -133,8 +134,9 @@ function showKeywords(f){
       button.addEventListener('click',()=>{state.q=term.toLowerCase();closeLightbox(false);updateURL();render();$('search').focus();});
       list.append(button);
     }
-    const source=el('span','keyword-source',group.source_type==='paper_pdf'?t(`论文原文 · 第 ${group.page} 页`,`Paper PDF · page ${group.page}`):t('出版平台','Publisher'));
-    section.append(heading,list,source);container.append(section);
+    const source=el('a','keyword-source',group.source_type==='paper_pdf'?t(`论文原文 · 第 ${group.page} 页 ↗`,`Paper PDF · page ${group.page} ↗`):t('出版平台原文 ↗','Publisher source ↗'));
+    try{const u=new URL(group.source_url);if(u.protocol!=='https:')continue;source.href=u.href;}catch{continue;}
+    source.target='_blank';source.rel='noopener';section.append(heading,list,source);container.append(section);
   }
 }
 function cancelMotion(){motionEpoch++;motions.forEach(a=>a.cancel());motions=[];$('lightbox').querySelectorAll('.image-flight').forEach(n=>n.remove());proxy=null;$('lb-img').style.visibility='';$('lightbox').classList.remove('is-opening','is-closing');closing=false;}
@@ -190,7 +192,7 @@ function fromURL(){
   if(lastURL===location.href)return;lastURL=location.href;const next=core.readState(location.href,data),changed=Object.keys(next).some(k=>next[k]!==state[k]);Object.assign(state,next);if(changed)render();const id=hashId();if(id&&byId.has(id))openLightbox(id,false);else{cancelMotion();closeLightbox(false);}
 }
 $('stat-figures').textContent=number(rows.length);$('stat-papers').textContent=number(new Set(rows.map(f=>f.paper_id)).size);$('stat-sources').textContent=Object.keys(data.sources).length;
-function updateCoverage(){$('keyword-coverage').textContent=t(`原始关键词已收录 ${number(Object.keys(data.paper_keywords||{}).length)} / ${$('stat-papers').textContent} 篇论文 · 各词组标注原始来源。`,`Original keywords are available for ${number(Object.keys(data.paper_keywords||{}).length)} / ${$('stat-papers').textContent} papers; each group identifies its source.`);}updateCoverage();
+function updateCoverage(){$('keyword-coverage').textContent=t(`原始关键词已收录 ${number(Object.keys(data.paper_keywords||{}).length)} / ${$('stat-papers').textContent} 篇论文 · 各词组标注原始来源。`,`Original keywords are available for ${number(Object.keys(data.paper_keywords||{}).length)} / ${$('stat-papers').textContent} papers; each group links to its source.`);}updateCoverage();
 makeChips('venue-chips','venue',Object.keys(data.sources),k=>data.sources[k]);makeChips('year-chips','year',[...new Set(rows.map(f=>f.year))].sort((a,b)=>b-a),String);makeChips('pattern-chips','pattern',Object.keys(data.patterns),patLabel);
 $('search').addEventListener('input',e=>{const raw=e.target.value,start=e.target.selectionStart;state.q=raw.trim().toLowerCase();closeLightbox(false);updateURL('replaceState');render('search');e.target.value=raw;try{e.target.setSelectionRange(start,start);}catch{}});
 $('sort').addEventListener('change',e=>{state.sort=e.target.value;closeLightbox(false);updateURL();render();});

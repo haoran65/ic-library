@@ -37,6 +37,7 @@
     '.lb-info dl>div:nth-child(1) dt':'Citations',
     '.lb-info dl>div:nth-child(2) dt':'Published',
     '.lb-info dl+h3':'Caption <span>CAPTION</span>',
+    '#lb-paper':'View paper ↗',
     '#lb-share':'Copy figure link',
     '#welcome-title':'A note before you begin',
     '#welcome-copy':'<p>This small vibe-coded project is built on the wonderful open-source <a href="https://github.com/qwdwqfwq/topconf-paper-figure-gallery" target="_blank" rel="noopener">Top-Conf Figure Gallery</a>. My thanks to everyone who contributed to the original project.</p><p>The Gallery is still a work in progress. More figures and content are on the way, and the text-to-image feature is being migrated. The figures have not yet been accurately classified by hand, so search is the best way to find what you need.</p><p>There is also a little cat here named Bappu. Its three favorite things are scattered throughout the Gallery. Help find them, and something interesting might happen :)</p>',
