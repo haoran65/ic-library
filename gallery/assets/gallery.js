@@ -213,6 +213,7 @@ document.addEventListener('keydown',e=>{if(!$('lightbox').open)return;if(e.key==
 const welcomeKey='ic-gallery-welcome-seen-v1';
 function welcomeWasSeen(){try{if(localStorage.getItem(welcomeKey)==='1')return true;}catch{}try{return sessionStorage.getItem(welcomeKey)==='1';}catch{return false;}}
 function rememberWelcome(){try{localStorage.setItem(welcomeKey,'1')}catch{}try{sessionStorage.setItem(welcomeKey,'1')}catch{}}
+$('welcome-open').addEventListener('click',()=>{if(!$('gallery-welcome').open)$('gallery-welcome').showModal();});
 $('welcome-close').addEventListener('click',()=>{rememberWelcome();$('gallery-welcome').close();});
 $('gallery-welcome').addEventListener('cancel',rememberWelcome);
 $('gallery-welcome').addEventListener('close',()=>{rememberWelcome();lastURL='';fromURL();});
