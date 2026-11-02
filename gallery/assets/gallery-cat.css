@@ -1,0 +1,45 @@
+.desksprite-free{filter:drop-shadow(0 3px 3px #0003)}
+.gallery-cat-nap-cover{position:fixed;z-index:2147483600;cursor:not-allowed;background:transparent;touch-action:manipulation}
+.gallery-cat-nap-cover[hidden]{display:none}
+body .desksprite-bubble.show{border:2px solid #303332;border-radius:0;background:#fff8e5;color:#303332;box-shadow:3px 3px 0 #303332;padding:5px 9px;font: bold 14px/1.2 "SimSun","MS Gothic",monospace;letter-spacing:1px}
+body .desksprite-bubble.show:after{border-radius:0}
+body:has(#lightbox[open]) .desksprite-free,body:has(#lightbox[open]) .desksprite-bubble,body:has(#lightbox[open]) .gallery-cat-nap-cover{visibility:hidden}
+.bappu-dock{position:fixed;left:16px;bottom:16px;z-index:2147483604;font:14px/1.4 "SimSun",monospace}
+.bappu-dock button,.bappu-prop-remove{cursor:pointer;font:inherit}
+.bappu-bag{width:56px;height:56px;border:3px solid #55483d;background:#f6e9cf;box-shadow:4px 4px 0 #55483d;padding:5px}
+.bappu-art-clip{display:block;position:relative;width:100%;height:100%;overflow:hidden;pointer-events:none}
+.bappu-art-clip img{display:block;width:100%;height:100%;object-fit:contain;image-rendering:pixelated;transform-origin:50% 50%;pointer-events:none;user-select:none}
+.bappu-art-bag img{transform:scale(2.15)}
+.bappu-art-food img{transform:scale(1.9)}
+.bappu-art-bed img{transform:scale(1.18)}
+.bappu-art-wand img{transform:scale(1.1)}
+.bappu-menu{position:absolute;bottom:68px;left:0;width:172px;padding:7px;background:#f6e9cf;border:3px solid #55483d;box-shadow:4px 4px 0 #55483d}
+.bappu-menu[hidden],.bappu-hint[hidden]{display:none}
+.bappu-menu button{display:flex;align-items:center;gap:9px;width:100%;border:0;background:transparent;color:#443830;text-align:left;padding:5px}
+.bappu-menu button:hover,.bappu-menu button:focus-visible{background:#e8d1a8;outline:2px solid #9f7b58}
+.bappu-menu .bappu-art-clip{width:32px;height:32px;flex:none}
+.bappu-hint{position:absolute;bottom:6px;left:70px;width:max-content;max-width:min(260px,70vw);padding:6px 9px;color:#443830;background:#fff8e5;border:2px solid #55483d;box-shadow:3px 3px 0 #55483d}
+.bappu-prop{position:fixed;z-index:2147483599;transform:translate(-50%,-50%);touch-action:none}
+.bappu-prop-art{width:100%;height:100%;cursor:grab;touch-action:none}
+.bappu-prop-food{width:76px;height:56px}.bappu-prop-bed{width:170px;height:110px}.bappu-prop-wand{width:72px;height:72px;pointer-events:none}
+.bappu-prop-wand .bappu-prop-remove{pointer-events:auto}
+.bappu-prop-wand .bappu-art-wand{overflow:visible}
+.bappu-prop-remove{position:absolute;right:0;top:0;width:23px;height:23px;padding:0;color:#fff;background:#745649;border:2px solid #f3e5cc;line-height:16px;opacity:0}
+.bappu-prop-bed .bappu-prop-remove{right:-28px;top:-12px}
+.bappu-prop:hover .bappu-prop-remove,.bappu-prop:focus-within .bappu-prop-remove{opacity:1}
+@media(hover:none){.bappu-prop-remove{opacity:1}}
+body:has(#lightbox[open]) .bappu-dock,body:has(#lightbox[open]) .bappu-prop{visibility:hidden}
+body:has(#gallery-welcome[open]) .desksprite-free,body:has(#gallery-welcome[open]) .desksprite-bubble,body:has(#gallery-welcome[open]) .gallery-cat-nap-cover,body:has(#gallery-welcome[open]) .bappu-dock,body:has(#gallery-welcome[open]) .bappu-prop{visibility:hidden}
+html[data-theme=dark] .bappu-dock .bappu-bag{background:#f6e9cf;color:#443830;border-color:#55483d}
+html[data-theme=dark] .bappu-dock .bappu-menu button{background:transparent;color:#443830}
+html[data-theme=dark] .bappu-dock .bappu-menu button:hover,html[data-theme=dark] .bappu-dock .bappu-menu button:focus-visible{background:#e8d1a8}
+html[data-theme=dark] .bappu-prop .bappu-prop-remove{background:#745649;color:#fff;border-color:#f3e5cc}
+.bappu-empty{margin:4px;padding:8px;color:#58483e;font-size:12px;line-height:1.5}
+.bappu-unlock{position:absolute;left:15px;bottom:70px;width:30px;height:34px;min-height:0;padding:0;border:2px solid #4d3f3a;background:#fff8e5;color:#594139;font:bold 20px/1 monospace;box-shadow:3px 3px 0 #55483d}
+.bappu-unlock::after{content:'';position:absolute;bottom:-7px;left:9px;width:7px;height:7px;background:#fff8e5;border-right:2px solid #4d3f3a;border-bottom:2px solid #4d3f3a;transform:rotate(45deg)}
+.bappu-menu:not([hidden])~.bappu-unlock{left:180px}
+html[data-theme=dark] .bappu-dock .bappu-unlock,html[data-theme=reimi] .bappu-dock .bappu-unlock{background:#fff8e5;color:#594139;border-color:#4d3f3a}
+html[data-theme=reimi] .bappu-dock .bappu-bag{background:#f6e9cf;color:#443830;border-color:#55483d}
+html[data-theme=reimi] .bappu-dock .bappu-menu button{background:transparent;color:#443830}
+html[data-theme=reimi] .bappu-dock .bappu-menu button:hover,html[data-theme=reimi] .bappu-dock .bappu-menu button:focus-visible{background:#e8d1a8}
+html[data-theme=reimi] .bappu-prop .bappu-prop-remove{background:#745649;color:#fff;border-color:#f3e5cc}
