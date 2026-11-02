@@ -126,3 +126,5 @@ html[data-theme=dark] .gallery-collectible,html[data-theme=reimi] .gallery-colle
 .welcome-clues h3{margin:0 0 8px;font-size:14px;color:var(--ink)}
 .welcome-clues p,.welcome-clues li{font-size:13px;line-height:1.75}.welcome-clues p{margin:0 0 10px;color:var(--muted)}.welcome-clues ol{margin:0;padding-left:20px}.welcome-clues li+li{margin-top:6px}.welcome-clues strong{color:var(--ink)}
 #welcome-open:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+
+.clue-poems{display:grid;gap:16px}.clue-poem{padding-top:14px;border-top:1px solid var(--line)}.clue-poem h4{margin:0 0 8px;color:var(--accent);font-size:11px;letter-spacing:.12em}.clue-poem p{margin:0;color:var(--ink);line-height:1.9}.clue-poem details{margin-top:8px;color:var(--muted);font-size:12px}.clue-poem summary{cursor:pointer;min-height:32px;display:list-item}.clue-poem details p{margin:4px 0 0;color:var(--muted)}.clue-poem summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
